@@ -1,18 +1,11 @@
 import analyzer from './analyzer.js';
 
-//TODO: escuchar eventos del DOM e invocar  los métodos del objeto `analyzer`
-let textarea = document.querySelector('textarea[name="user-input"]');
-//Esta variable es para obtener la cadena que se encuentra contenida en la etiqueta textarea
-let contarCaracteres = document.getElementById("contarCaracteres");
-// esta  variable obtiene los elementos contenidos en la cadena 
+const textArea = document.querySelector('textarea[name="user-input"]');
+const botonLimpiar = document.getElementById("reset-button");
 
-textarea.addEventListener("input",characterCount);
-// llama al evento cuando se introduce informacion dentro del text area esto llama a la funcion characterCount()
-
-function characterCount() {
-    let contenido = textarea.value;
-    let totalCaracteres = contenido.length;
-    contarCaracteres.textContent = totalCaracteres;
-  }
-
- 
+//Esto toma referencia de la variable botonLimpiar la cual llama el elemento boton del html cuando 
+//el la funcion escucha al evento click se ejecuta la funcion en este caso cambia el valor del textarea a espacio vacio.
+botonLimpiar.addEventListener("click", function () {
+    textArea.value = "";
+    
+  });
