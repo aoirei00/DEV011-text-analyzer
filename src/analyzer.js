@@ -12,8 +12,8 @@ const analyzer = {
     if (!text.trim()) {
       return 0;
     }
-    const words = text.trim().split(/\s+/);
-    return words.length;
+    const palabras = text.trim().split(/\s+/);
+    return palabras.length;
 
   },
   getCharacterCount: (text) => {
@@ -25,8 +25,9 @@ const analyzer = {
   getCharacterCountExcludingSpaces: (text) => {
     //TODO: esta función debe retornar el recuento de caracteres excluyendo espacios y signos de puntuación que se encuentran en el parámetro `text` de tipo `string`.
     // raplace utiliza una espresion regular para remplazar los espacios en blanco por un valor nulo eliminandolos de la cadena.
-    const textWithoutSpaces = text.replace(/\s/g, '');
-    return textWithoutSpaces.length;
+    // '\s' metacaracter que representa cualquier espacio en blanco 
+    const textoSin = text.replace(/[\s.,/#!$%^&*;|:{}=\-_`~()”“"…]/g, '');
+    return textoSin.length;
 
   },
   getAverageWordLength: (text) => {
@@ -36,45 +37,62 @@ const analyzer = {
     // igual a 0 entonces nos va a retornar un valor cero, por lo contrario si no se cumple esa condicion va a retornar
     // el promedio de las palabras de la siguiente manera, se hace un ciclo ford con un contador que comienza en 0,
     //este bucle va a repetirse siempre que se le esten agregando valores a la cadena y los va sumando de uno a uno.
-    const words = text.trim().split(/\s+/);
+    const palabras = text.trim().split(/\s+/);
 
-    if (words.length === 0) {
+    if (palabras.length === 0) {
       return 0;
     }
     let totalLength = 0;
 
-    for (let i = 0; i < words.length; i++) {
-      totalLength = totalLength + words[i].length;
+    for (let i = 0; i < palabras.length; i++) {
+      totalLength = totalLength + palabras[i].length;
     }
 
     // Calcular el promedio y redondearlo a un decima
-    const promedioCadena = totalLength / words.length;
-    return promedioCadena.toFixed(1);//.toFixed se utiliza para redondear con los decimales que se requieran
+    const promedioCadena = totalLength / palabras.length;
+    return promedioCadena.toFixed(2);//.toFixed se utiliza para redondear con los decimales que se requieran
   },
   getNumberCount: (text) => {
     //TODO: esta función debe retornar cúantos números se encuentran en el parámetro `text` de tipo `string`.
     // .match ayuda a ancontrar coicidencias dentro de una cadena en este caso buscamos esas coincidencias con una
-    //expresion regular la cual nos dice que que se van a buscar numeros(representado con 'd')
-    // con el operador '?' se verifica si se encontraron esas coicidencias de numeros y de ser asi las almacena en 
-    //numbers. length, de no haberlas va a ratornar un 0.
-    const numbers = text.match(/\d+/g);
-    return numbers ? numbers.length : 0;
+    //expresion regular la cual nos dice que que se van a buscar numeros(representado con 'd') y ademas el signo '+'
+    // espresa que buscarara mas de una coicidencia, dentro de la expresion regurar tambien va abuscar coicidencias
+    //de numeros decimales expresado con "\.\d" el signo "?" puede indicar que pueden existir o no esas coicidencias
+    //agregaremos un contador que comience en cero 
+    const numeros = text.match(/\d+(\.\d+)?/g);
+    let contador = 0;
+    if (numeros ) {//ponemos una condicionante if  que nos da un true si existen numeros
+      for (let i = 0; i < numeros.length; i++) {//si hay coincidencias numericas se ejecuta un ciclo for
+        const numero = numeros[i];
+        if (parseFloat(numero) !== 0) {// '!==' hace una comparacion de los valores si estos son diferentes arroja un true en este caso si el numero es diderente a cero arroja
+          contador++;
+        }
+      }
+    }
+
+    return contador;// si no hay numeros retorna 0
+    
   },
   getNumberSum: (text) => {
     //TODO: esta función debe retornar la suma de todos los números que se encuentran en el parámetro `text` de tipo `string`.
     // Al igual que en el metodo anterior la primera linea es para encontrar las coincidencias numericas mediante
     //el metodo .match y la expresion regular, despues de ello utilizamos if como un condicionante  la cual nos dice
-    //que si esta presente la variable numeros nos va a retornar la suma de estos (ya sumados con el metodo.reduce)
-    //acc representa el acumulador 
-    //.reduce nos sirve para sumar toda esa lista de numeros que se vayan ingresando estos numeros se van sumando 
-    //una a una y se inicia con un contador en 0
-    //de no cumplirse la condicion else retorna 0.
+    //que si esta presente la variable numeros nos va a retornar la suma de estos utilizando un ciclo for 
+    
 
-    const numbers = text.match(/\d+/g);
-    if (numbers) {
-      return numbers.reduce((acc, num) => acc + parseInt(num), 0);
+    const numeros = text.match(/\d+(\.\d+)?/g);
+    let suma = 0;
+
+    if (numeros) {
+      for (let i = 0; i < numeros.length; i++) {
+        const num = parseFloat(numeros[i]);
+        if (!isNaN(num)) {// utilizamos !isNaN para dar un true si num es un numero de ser asi indicamos que suma toma el valor de num
+          suma = suma + num;
+        }
+      }
     }
-    return 0;
+
+    return suma;
 
   },
 };

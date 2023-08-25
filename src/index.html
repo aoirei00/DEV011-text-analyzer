@@ -4,7 +4,9 @@
 <head>
   <meta charset="utf-8">
   <title>Analizador de texto</title>
-<header><h1>Analizador de Texto</h1></header>
+  <header>
+    <h1>Analizador de Texto</h1>
+  </header>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -12,14 +14,18 @@
   <script src="index.js" type="module"></script>
   <ul id="Lista-Resultados">
     <li data-testid="character-count">Caracteres Totales:<span id="character-count">0</span></li>
-    <li data-testid="character-no-spaces-count">Caracteres Sin Espacios:<span id="character-no-spaces-count">0</span></li>
+    <li data-testid="character-no-spaces-count">Sin Espacios Ni Signos de Puntuacion:<span id="character-no-spaces-count">0</span>
+    </li>
     <li data-testid="word-count">Palabras:<span id="word-count">0</span></li>
     <li data-testid="number-count">Números:<span id="number-count">0</span></li>
     <li data-testid="number-sum">Suma Números:<span id="number-sum">0</span></li>
     <li data-testid="word-length-average">Promedio De Longitud:<span id="word-length-average">0</span></li>
   </ul>
-  <textarea name="user-input"></textarea>
+  <textarea name="user-input" aria-placeholder="Escribe el texto a analizar..."></textarea>
   <button id="reset-button">Limpiar</button>
 </body>
-<footer><p1>Jasmin Becerra Flores</p1></footer>
+<footer>
+  <p1>Jasmin Becerra Flores</p1>
+</footer>
+
 </html>
