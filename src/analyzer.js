@@ -26,7 +26,7 @@ const analyzer = {
     //TODO: esta función debe retornar el recuento de caracteres excluyendo espacios y signos de puntuación que se encuentran en el parámetro `text` de tipo `string`.
     // raplace utiliza una espresion regular para remplazar los espacios en blanco por un valor nulo eliminandolos de la cadena.
     // '\s' metacaracter que representa cualquier espacio en blanco 
-    const textoSin = text.replace(/[\s.,/#!$%^&*;|:{}=\-_`~()”“"…]/g, '');
+    const textoSin = text.replace(/[\s.,/'"#!$%^&*;|:{}=\-_`~()”“"…]/g, '');
     return textoSin.length;
 
   },

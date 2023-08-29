@@ -12,20 +12,19 @@
 
 <body>
   <script src="index.js" type="module"></script>
-  <ul id="Lista-Resultados">
-    <li data-testid="character-count">Caracteres Totales:<span id="character-count">0</span></li>
-    <li data-testid="character-no-spaces-count">Sin Espacios Ni Signos de Puntuacion:<span id="character-no-spaces-count">0</span>
-    </li>
-    <li data-testid="word-count">Palabras:<span id="word-count">0</span></li>
-    <li data-testid="number-count">Números:<span id="number-count">0</span></li>
-    <li data-testid="number-sum">Suma Números:<span id="number-sum">0</span></li>
-    <li data-testid="word-length-average">Promedio De Longitud:<span id="word-length-average">0</span></li>
+  <ul class="ul-contenido">
+    <li data-testid="character-count" class="lista"></li>
+    <li data-testid="character-no-spaces-count" class="lista"></li>
+    <li data-testid="word-count" class="lista"></li>
+    <li data-testid="number-count" class="lista"></li>
+    <li data-testid="number-sum" class="lista"></li>
+    <li data-testid="word-length-average" class="lista"></li>
   </ul>
-  <textarea name="user-input" aria-placeholder="Escribe el texto a analizar..."></textarea>
-  <button id="reset-button">Limpiar</button>
+  <textarea name="user-input" style="display: flex; width: 800px; height: 80px; resize: none; margin: 10px; font-family: 'Times New Roman', Times, serif; font-size: large; margin-right: auto; margin-left: auto;border-radius: 10px; padding: 5px;" placeholder="Escribe el texto a analizar..."></textarea>
+  <button id="reset-button" class="boton-reset">Limpiar</button>
 </body>
 <footer>
-  <p1>Jasmin Becerra Flores</p1>
+  <p>Jasmin Becerra Flores</p>
 </footer>
 
 </html>
