@@ -1,105 +1,111 @@
 
 body {
-    font-family: 'Times New Roman', Times, serif;
-    background-color: #d8b8fd;
+    background-color:#fafbfd ;
     padding: 30px;
 }
 
 header{
     display: flex;
-    width:auto;
+    width:1000px;
+    height: 80px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 40px;
     justify-content: center;
     align-items: center;
-    background-color:#765898;
+    background: none;
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: x-large;
-    color: #ffffff;
-    border-bottom: 10px solid #52d053;
-    border-radius: 10px;
+    color:#1c0d02;
 
+}
+header h1{
+    border-bottom: 3px solid #aba5a3; 
 }
 
 footer{
     display: flex;
-    width: auto;
+    width: 90%;
     height: 70px;
-    padding: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
     justify-content: right;
-    background-color:#765898;
-    color: #ffffff;
-    font-family: 'Times New Roman', Times, serif;
+    background:none;
+    color:#1c0d02;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
-    border-top: 10px solid #52d053;
-    border-radius: 10px;
+}
+footer p {
+    border-bottom: 2px solid #aba5a3; 
 }
 
 #reset-button{ 
-    background-color: #765898;
-    border-radius: 10px;
+    background:none;
+    border-radius: 5px;
     width: 110px;
     height: 45px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
-    color: #ffffff;
-    margin-left: 75%;
-    border: 1px solid #52d053;
+    color: #1c0d02;
+    margin-left: .5%;
+    border: 3px solid #aba5a3;
     
 }
 
 #reset-button:hover{
-    background-color: #52d053;
-    border: 1px solid #765898 ;
-    color: #765898;
+    background-color: #1c0d02;
+    border: 1px solid #aba5a3;
+    color: #ffffff;
 }
 
 
 .ul-contenido{
     list-style: none;
-    padding: 5px;
-    margin: 10px;
-    display: flex;    /* Utiliza flexbox para organizar los elementos */
-    flex-wrap: wrap;  /* Permite que los elementos se envuelvan a una nueva línea en este caso los contadores*/
-    justify-content: flex-start; /* Alinea los elementos a la izquierda */
+    padding: 0;
+    margin: 0;
+    margin-bottom: 30px;
+    display: flex; /* Hace que los elementos se muestren en línea */
+    justify-content: space-around; /* Distribuye los elementos uniformemente en la línea */
+    align-items: center; /* Centra los elementos verticalmente en la línea */
 }
  
 .lista{
-    display: flex;
-    display: inline-block;
-    margin-right: 10px; 
-    width: calc(50% - 20px); /* Ocupa el 50% del ancho del contenedor con margin */
-    height:35px;
-    margin: 5x; /* Espaciado entre los elementos */
-    margin-top: 10px;
-    padding: 5px;
-    text-align: center; /* Centra el contenido horizontalmente */
-    background-color:#765898;
-    border-radius: 10px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size:25px;
-    color: #ffffff;
-    border-bottom: 1px solid #52d053;
+    width: 182px; 
+    height: 112px; 
+    padding-top: 70px;
+    background:none; 
+    border-radius: 50%; 
+    border: 3px solid #aba5a3;
+    text-align: center;
+    line-height: 30px; 
+    color: #1c0d02; 
+    font-weight: bold; 
+    margin: 0 5px; 
 }
 
-.lista:hover{
-    background-color:#52d053;
-    border-bottom: 1px solid #765898;
-}
+
 textarea[name="user-input"]{
     display: flex; 
-    width: 800px;
+    width:98%;
     height: 80px; 
+    margin: auto;
+    margin-bottom: 10px;
     resize: none; 
-    margin: 10px; 
-    font-family: 'Times New Roman', Times, serif; 
-    font-size: large; 
-    margin-right: auto; 
-    margin-left: auto;
-    border-radius: 10px; 
+    background: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large; 
+    color: #1c0d02;
+    border-radius: 5px;
+    outline: none;
+    border: none;
     padding: 5px;
-    border: 1px solid #52d053 ;
+    border-bottom: 3px solid #aba5a3 ;
+    border-left: 3px solid #aba5a3 ;
 }
 
-
-
+textarea[name="user-input"]::placeholder{
+    color: #1c0d02;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

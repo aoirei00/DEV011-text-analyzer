@@ -18,11 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // De esta manera traemos los metodos del objeto analyzer 
     //.textContent se encarga de actualizar el contenido del texto en los elementos html
     characterCount.textContent = "Caracteres Totales: " + analyzer.getCharacterCount(text);
-    characterNoSpacesCount.textContent = "Sin Espacios Ni Signos de Puntuacion: " + analyzer.getCharacterCountExcludingSpaces(text);
+    characterNoSpacesCount.textContent = "Sin Espacios : " + analyzer.getCharacterCountExcludingSpaces(text);
     wordCount.textContent = "Palabras: " + analyzer.getWordCount(text);
     numberCount.textContent = "Números: " + analyzer.getNumberCount(text);
     numberSum.textContent = "Suma Números: " + analyzer.getNumberSum(text);
-    wordLengthAverage.textContent = "Promedio De Longitud: " + analyzer.getAverageWordLength(text);
+    wordLengthAverage.textContent = "Prom. De Longitud: " + analyzer.getAverageWordLength(text);
   }
 
   // El escuchador actua con el evento keyup que es cuando se presiona una tecla.
